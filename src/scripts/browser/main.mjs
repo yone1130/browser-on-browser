@@ -55,7 +55,7 @@ export class Browser {
 
         let url;
 
-        if (src.startsWith("http://localhost")) {
+        if (src.startsWith("https://browser.yoneyo.com")) {
             return;
         } else {
             try {
