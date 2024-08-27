@@ -230,7 +230,7 @@ export class Browser {
 
         if (uri.startsWith("https://browser.yoneyo.com/")) {
             url = `${uri.replace(/^https:\/\/browser.yoneyo.com\/pages\//, '')}`;
-            url = `view://${url.replace(/^.html/, '')}`;
+            url = `view://${url.replace(".html", '')}`;
         } else {
             try {
                 url = new URL(uri);
