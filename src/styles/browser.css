@@ -19,7 +19,7 @@ body {
     height: 100dvh;
     overflow: hidden;
     font-size: var(--font-size);
-    font-family: "M PLUS 1", sans-serif;
+    font-family: "M PLUS 1", "Noto Sans JP", sans-serif;
     color: #f0f0f0ff;
     scrollbar-width: thin !important;
     scrollbar-color: #888 #f1f1f1 !important;
