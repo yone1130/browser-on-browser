@@ -22,7 +22,7 @@ body {
     padding: 2rem var(--this-padding);
     gap: 1.5rem;
     font-size: var(--font-size);
-    font-family: "M PLUS 1", sans-serif;
+    font-family: "M PLUS 1", "Noto Sans JP", sans-serif;
     color: #f0f0f0ff;
     background-color: #202020ff;
 }
