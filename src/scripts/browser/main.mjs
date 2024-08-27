@@ -229,7 +229,7 @@ export class Browser {
         const uri = activeTabContent.src;
 
         if (uri.startsWith("https://browser.yoneyo.com/")) {
-            url = `view://${uri.replace(/^https:\/\/browser.yoneyo.com\//, '')}`;
+            url = `view://${uri.replace(/^https:\/\/browser.yoneyo.com\/pages\//, '')}`;
         } else {
             try {
                 url = new URL(uri);
