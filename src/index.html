@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="ja-JP">
+
+<head>
+    <meta charset="UTF-8">
+
+    <title>Browser on Browser</title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=M+PLUS+1:wght@100..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./styles/browser.css">
+
+    <script src="./scripts/main.mjs" type="module"></script>
+</head>
+
+<body>
+    <div id="navigation" class="navigation">
+        <div id="tabsBar" class="tabs-bar">
+            <div id="searchTabsButton" class="search-tabs-button">
+                <img src="./images/arrow_drop_down_24dp_E8EAED_FILL0_wght400_GRAD0_opsz24.svg" alt="" srcset="">
+            </div>
+
+            <div id="tabs" class="tabs">
+                <ul id="tabsUl" class="tabs__ul"></ul>
+
+                <div id="newTabButton" class="new-tab-button">
+                    <img src="./images/add_24dp_E8EAED_FILL0_wght400_GRAD0_opsz24.svg" alt="" srcset="">
+                </div>
+            </div>
+        </div>
+
+        <div id="control" class="control">
+            <div id="action" class="action">
+                <div id="backButton" class="control__button back-button">
+                    <img class="control__button-img"
+                        src="./images/arrow_back_24dp_E8EAED_FILL0_wght400_GRAD0_opsz24.svg" alt="" srcset="">
+                </div>
+
+                <div id="forwardButton" class="control__button foward-button">
+                    <img class="control__button-img"
+                        src="./images/arrow_forward_24dp_E8EAED_FILL0_wght400_GRAD0_opsz24.svg" alt="" srcset="">
+                </div>
+
+                <div id="reloadButton" class="control__button reload-button">
+                    <img class="control__button-img" src="./images/refresh_24dp_E8EAED_FILL0_wght400_GRAD0_opsz24.svg"
+                        alt="" srcset="">
+                </div>
+
+                <div id="homeButton" class="control__button home-button">
+                    <img class="control__button-img" src="./images/home_24dp_E8EAED_FILL0_wght400_GRAD0_opsz24.svg"
+                        alt="" srcset="">
+                </div>
+            </div>
+
+            <div id="addressBar" class="address-bar">
+                <div id="addressBarStatus" class="address-bar-status">
+                    <img class="address-bar-status__img" src="./images/info_24dp_E8EAED_FILL0_wght400_GRAD0_opsz24.svg"
+                        alt="" srcset="">
+                </div>
+
+                <input id="addressBarInput" class="address-bar-input" type="url" autocomplete="off">
+            </div>
+
+            <div id="menu" class="menu">
+                <div id="menuButton" class="menu-button">
+                    <img class="menu-button__img"
+                        src="./images/account_circle_24dp_E8EAED_FILL0_wght400_GRAD0_opsz24.svg" alt="" srcset="">
+                </div>
+
+                <div id="menuButton" class="menu-button">
+                    <img class="menu-button__img" src="./images/more_vert_24dp_E8EAED_FILL0_wght400_GRAD0_opsz24.svg"
+                        alt="" srcset="">
+                </div>
+            </div>
+        </div>
+
+        <div id="bookmarkBar" class="bookmark-bar">
+            <ul class="bookmark-bar__ul">
+                <li id="bookmarkYoneHomepage" class="bookmark-bar__li">
+                    <img class="bookmark-bar__icon" src="https://cdn.yoneyo.com/images/yone-logos/yone_icon.png" alt="" srcset="">
+                    <span class="bookmark-bar__title">よね/Yone</span>
+                </li>
+
+                <li id="bookmarkYditsSite" class="bookmark-bar__li">
+                    <img class="bookmark-bar__icon" src="https://cdn.ydits.net/images/ydits_logos/ydits_icon.png" alt="" srcset="">
+                    <span class="bookmark-bar__title">YDITS公式サイト</span>
+                </li>
+
+                <li id="bookmarkYditsWeb" class="bookmark-bar__li">
+                    <img class="bookmark-bar__icon" src="https://cdn.ydits.net/images/ydits_logos/ydits_icon.png" alt="" srcset="">
+                    <span class="bookmark-bar__title">YDITS for Web</span>
+                </li>
+            </ul>
+
+            <div id="allBookmarks" class="all-bookmarks">
+                <span></span>
+                <span>すべてのブックマーク</span>
+            </div>
+        </div>
+    </div>
+
+    <div id="view" class="view"></div>
+</body>
+
+</html>
