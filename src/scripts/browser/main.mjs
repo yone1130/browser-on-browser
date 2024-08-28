@@ -133,11 +133,6 @@ export class Browser {
 
 
     createTab(uri) {
-        if (this.elements.tabs.querySelectorAll("li").length >= 8) {
-            alert("開けるタブ数は最大で8までです。")
-            return;
-        }
-
         this.tabCount += 1;
         const id = this.tabCount;
 
