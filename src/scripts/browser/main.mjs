@@ -151,7 +151,7 @@ export class Browser {
             <div class="tabs__hover">
                 <div class="tabs__left">
                     <img class="tabs__img" src="./images/public_24dp_E8EAED_FILL0_wght400_GRAD0_opsz24.svg" alt="" srcset="">
-                    <span id="tabTitle">Viewer</span>
+                    <span class="tabs__title">Viewer</span>
                 </div>
                 <img id="close-${id}" class="tabs__close" src="./images/close_24dp_E8EAED_FILL0_wght400_GRAD0_opsz24.svg" alt="" srcset="">
             </div>
