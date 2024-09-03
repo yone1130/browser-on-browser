@@ -1,7 +1,5 @@
-
 export class Browser {
     name = "Browser";
-
 
     constructor(config) {
         console.debug(`${this.name}.constructor`);
@@ -13,7 +11,6 @@ export class Browser {
         this.initEvents();
         this.createTab(this.homeUri);
     }
-
 
     initElements(elements) {
         console.debug(`${this.name}.initElements`);
@@ -28,27 +25,49 @@ export class Browser {
         _elements.view = document.getElementById(elements.view);
         _elements.homeButton = document.getElementById(elements.homeButton);
         _elements.backButton = document.getElementById(elements.backButton);
-        _elements.forwardButton = document.getElementById(elements.forwardButton);
-        _elements.bookmarkYoneHomepage = document.getElementById(elements.bookmarkYoneHomepage);
-        _elements.bookmarkYditsSite = document.getElementById(elements.bookmarkYditsSite);
-        _elements.bookmarkYditsWeb = document.getElementById(elements.bookmarkYditsWeb);
+        _elements.forwardButton = document.getElementById(
+            elements.forwardButton
+        );
+        _elements.bookmarkYoneHomepage = document.getElementById(
+            elements.bookmarkYoneHomepage
+        );
+        _elements.bookmarkYditsSite = document.getElementById(
+            elements.bookmarkYditsSite
+        );
+        _elements.bookmarkYditsWeb = document.getElementById(
+            elements.bookmarkYditsWeb
+        );
 
         return _elements;
     }
 
-
     initEvents() {
         console.debug(`${this.name}.initEvents`);
-        this.elements.addressInput.addEventListener("keydown", (event) => this.onKeydown(event));
-        this.elements.newTabButton.addEventListener("click", (event) => this.onClickNewTabButton(event));
-        this.elements.homeButton.addEventListener("click", (event) => this.onClickHomeButton(event));
-        this.elements.backButton.addEventListener("click", (event) => this.onClickBackButton(event));
-        this.elements.forwardButton.addEventListener("click", (event) => this.onClickForwardButton(event));
-        this.elements.bookmarkYoneHomepage.addEventListener("click", (event) => this.onClickYoneHomepageBookmark(event));
-        this.elements.bookmarkYditsSite.addEventListener("click", (event) => this.onClickYditsSiteBookmark(event));
-        this.elements.bookmarkYditsWeb.addEventListener("click", (event) => this.onClickYditsWebBookmark());
+        this.elements.addressInput.addEventListener("keydown", (event) =>
+            this.onKeydown(event)
+        );
+        this.elements.newTabButton.addEventListener("click", (event) =>
+            this.onClickNewTabButton(event)
+        );
+        this.elements.homeButton.addEventListener("click", (event) =>
+            this.onClickHomeButton(event)
+        );
+        this.elements.backButton.addEventListener("click", (event) =>
+            this.onClickBackButton(event)
+        );
+        this.elements.forwardButton.addEventListener("click", (event) =>
+            this.onClickForwardButton(event)
+        );
+        this.elements.bookmarkYoneHomepage.addEventListener("click", (event) =>
+            this.onClickYoneHomepageBookmark(event)
+        );
+        this.elements.bookmarkYditsSite.addEventListener("click", (event) =>
+            this.onClickYditsSiteBookmark(event)
+        );
+        this.elements.bookmarkYditsWeb.addEventListener("click", (event) =>
+            this.onClickYditsWebBookmark()
+        );
     }
-
 
     onIframeContentLoaded(event, src) {
         console.debug(`${this.name}.onIframeContentLoaded: src: `, src);
@@ -73,15 +92,13 @@ export class Browser {
         this.elements.addressInput.value = url;
     }
 
-
     onKeydown(event) {
         console.debug(`${this.name}.onKeydown`);
 
-        if (event.key === 'Enter') {
+        if (event.key === "Enter") {
             this.onKeydownEnter(event);
         }
     }
-
 
     onKeydownEnter(event) {
         console.debug(`${this.name}.onKeydownEnter`);
@@ -91,46 +108,37 @@ export class Browser {
         this.changeIframeSource(this.currentId, uri);
     }
 
-
     onClickNewTabButton(event) {
         this.createTab(this.homeUri);
     }
 
-
     onClickCloseTabButton(event, id) {
-        this.closeTab(event, id)
+        this.closeTab(event, id);
     }
-
 
     onClickHomeButton(event) {
         this.changeIframeSource(this.currentId, this.homeUri);
     }
 
-
     onClickBackButton(event) {
         window.history.back();
     }
-
 
     onClickForwardButton(event) {
         window.history.forward();
     }
 
-
     onClickYoneHomepageBookmark(event) {
         this.changeIframeSource(this.currentId, "https://www.yoneyo.com/");
     }
-
 
     onClickYditsSiteBookmark(event) {
         this.changeIframeSource(this.currentId, "https://www.ydits.net/");
     }
 
-
     onClickYditsWebBookmark(event) {
         this.changeIframeSource(this.currentId, "https://webapp.ydits.net/");
     }
-
 
     createTab(uri) {
         this.tabCount += 1;
@@ -138,10 +146,10 @@ export class Browser {
 
         this.currentId = id;
 
-        const newTab = document.createElement('li');
+        const newTab = document.createElement("li");
         newTab.id = id;
-        newTab.className = 'tabs__li';
-        newTab.setAttribute('data-tab', id);
+        newTab.className = "tabs__li";
+        newTab.setAttribute("data-tab", id);
         newTab.innerHTML = `
             <div class="tabs__hover">
                 <div class="tabs__left">
@@ -154,9 +162,9 @@ export class Browser {
 
         this.elements.tabs.appendChild(newTab);
 
-        const newIframe = document.createElement('iframe');
+        const newIframe = document.createElement("iframe");
         newIframe.id = `iframe-${id}`;
-        newIframe.className = 'view__iframe';
+        newIframe.className = "view__iframe";
         // newIframe.src = uri;
 
         this.elements.view.appendChild(newIframe);
@@ -164,18 +172,28 @@ export class Browser {
         console.debug(id);
         console.debug(newTab);
         if (newTab) {
-            newIframe.addEventListener("load", (event) => { this.onIframeContentLoaded(event, newIframe.contentWindow.location.href) })
-            newTab.addEventListener("click", (event) => this.onClickTab(event, id));
-            document.getElementById(`close-${id}`).addEventListener("click", (event) => this.onClickCloseTabButton(event, id));
+            newIframe.addEventListener("load", (event) => {
+                this.onIframeContentLoaded(
+                    event,
+                    newIframe.contentWindow.location.href
+                );
+            });
+            newTab.addEventListener("click", (event) =>
+                this.onClickTab(event, id)
+            );
+            document
+                .getElementById(`close-${id}`)
+                .addEventListener("click", (event) =>
+                    this.onClickCloseTabButton(event, id)
+                );
         } else {
             console.error("New tab element not found in DOM.");
         }
 
-        this.changeIframeSource(id, uri)
+        this.changeIframeSource(id, uri);
 
-        this.onClickTab({}, id)
+        this.onClickTab({}, id);
     }
-
 
     closeTab(event, id) {
         event.stopPropagation();
@@ -191,16 +209,15 @@ export class Browser {
             iframeToRemove.remove();
         }
 
-        if (document.querySelector('.tabs__li.current') === null) {
-            const firstTab = document.querySelector('.tabs__li');
+        if (document.querySelector(".tabs__li.current") === null) {
+            const firstTab = document.querySelector(".tabs__li");
             if (firstTab) {
-                this.onClickTab({}, firstTab.getAttribute('data-tab'));
+                this.onClickTab({}, firstTab.getAttribute("data-tab"));
             } else {
                 this.createTab(this.homeUri);
             }
         }
     }
-
 
     onClickTab(event, id) {
         console.debug(`${this.name}.onClickTab: id: `, id);
@@ -209,23 +226,33 @@ export class Browser {
 
         const tab = document.getElementById(String(id));
 
-        document.querySelectorAll('.tabs__li').forEach(t => t.classList.remove('current'));
-        document.querySelectorAll('.view__iframe').forEach(t => t.classList.remove('active'));
+        document
+            .querySelectorAll(".tabs__li")
+            .forEach((t) => t.classList.remove("current"));
+        document
+            .querySelectorAll(".view__iframe")
+            .forEach((t) => t.classList.remove("active"));
 
-        tab.classList.add('current');
+        tab.classList.add("current");
 
-        document.querySelectorAll('.view__iframe').forEach(content => content.classList.remove('active'));
+        document
+            .querySelectorAll(".view__iframe")
+            .forEach((content) => content.classList.remove("active"));
 
-        const activeTabContent = document.getElementById(`iframe-${tab.getAttribute('data-tab')}`);
-        activeTabContent.classList.add('active');
-
+        const activeTabContent = document.getElementById(
+            `iframe-${tab.getAttribute("data-tab")}`
+        );
+        activeTabContent.classList.add("active");
 
         let url;
         const uri = activeTabContent.src;
 
         if (uri.startsWith("https://browser.yoneyo.com/")) {
-            url = `${uri.replace(/^https:\/\/browser.yoneyo.com\/pages\//, '')}`;
-            url = `view://${url.replace(".html", '')}`;
+            url = `${uri.replace(
+                /^https:\/\/browser.yoneyo.com\/pages\//,
+                ""
+            )}`;
+            url = `view://${url.replace(".html", "")}`;
         } else {
             try {
                 url = new URL(uri);
@@ -241,13 +268,11 @@ export class Browser {
         this.elements.addressInput.value = url;
     }
 
-
     onInvalidUrlEntered(error, uri) {
         console.debug(`${this.name}.onInvalidUrlEntered`);
         console.error("Invalid url has entered: ", uri);
         alert("正しいURLを入力してください。");
     }
-
 
     changeIframeSource(id, uri) {
         console.debug(`${this.name}.changeIframeSource: uri: `, uri);
@@ -255,7 +280,7 @@ export class Browser {
         let url;
 
         if (uri.startsWith("view://")) {
-            url = `./pages/${uri.replace(/^view:\/\//, '')}.html`;
+            url = `./pages/${uri.replace(/^view:\/\//, "")}.html`;
         } else {
             try {
                 url = new URL(uri);
@@ -271,7 +296,7 @@ export class Browser {
             }
         }
 
-        console.debug(uri, url)
+        console.debug(uri, url);
 
         console.debug(`${this.name}.changeIframeSource`);
         const iframe = document.getElementById(`iframe-${id}`);

@@ -15,7 +15,7 @@ html {
 }
 
 body {
-    --this-padding: .5rem;
+    --this-padding: 0.5rem;
     display: flex;
     align-items: center;
     flex-direction: column;
@@ -48,7 +48,7 @@ body {
     border: 1px solid #ffffffff;
     width: 6.3em;
     text-wrap: nowrap;
-    padding: .2em;
+    padding: 0.2em;
 }
 
 .features {
