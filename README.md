@@ -1,15 +1,19 @@
 # Browser on Browser
 
+[→ 日本語](./README_JP.md)
+
 ## Overview
 
-『CSS完全に理解した』のでGoo〇le C〇romeを再現してみました(?)。ついでに機能もちょーっとだけ実装し、簡単なブラウジングもできるようにしました。
+The website that recreated a browser.
+
+Published at https://browser.yoneyo.com/.
 
 ## Usage
 
-`/src` をデプロイします。
+Deploy directory `/src`.
 
 ## License
 
-Licensed under the [MIT LICENSE](./LICENSE).
+Licensed under the [MIT License](./LICENSE).
 
 Copyright (C) よね/Yone
