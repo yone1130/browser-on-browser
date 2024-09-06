@@ -12,10 +12,10 @@ https://browser.yoneyo.com/ で公開しています。
 
 ## 利用方法
 
-`/src` ディレクトリをデプロイします。
+`src/` ディレクトリをデプロイします。
 
 ## ライセンス
 
-[MIT LICENSE](./LICENSE) のもとでライセンスされます。
+[MIT License](./LICENSE) のもとでライセンスされます。
 
 Copyright (C) よね/Yone

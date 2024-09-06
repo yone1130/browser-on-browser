@@ -6,11 +6,11 @@
 
 The website that recreated a browser.
 
-Published at https://browser.yoneyo.com/.
+Published at https://browser.yoneyo.com/ .
 
 ## Usage
 
-Deploy directory `/src`.
+Deploy directory `src/`.
 
 ## License
 
