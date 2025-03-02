@@ -1,63 +1,53 @@
 <!DOCTYPE html>
 <html lang="ja-JP">
-    <head>
-        <meta charset="UTF-8" />
 
-        <title>New Tab</title>
+<head>
+    <meta charset="UTF-8" />
 
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>New Tab</title>
 
-        <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-        <link
-            rel="stylesheet"
-            href="https://fonts.googleapis.com/css2?family=M+PLUS+1:wght@100..900&display=swap"
-        />
-        <link
-            rel="stylesheet"
-            href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400&display=swap"
-        />
-        <link rel="stylesheet" href="./styles/newtab.css" />
-    </head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <body>
-        <h1 class="page-tile">Browser on Browser</h1>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=M+PLUS+1:wght@100..900&display=swap" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400&display=swap" />
+    <link rel="stylesheet" href="./styles/newtab.css" />
+</head>
 
-        <h2>新しいタブ</h2>
+<body>
+    <h1 class="page-tile">Browser on Browser</h1>
 
-        <p class="page-description">
-            『CSS完全に理解した』ので某ブラウザ再現しました(?)。ついでに機能もちょっとだけ実装しました。
-        </p>
+    <h2>新しいタブ</h2>
 
-        <a class="link" href="https://www.yoneyo.com"
-            >『よね/Yone』のホームページ</a
-        >
+    <p class="page-description">
+        『CSS完全に理解した』のでブラウザ再現しました(?)。ついでに機能もちょっとだけ実装しました。
+    </p>
 
-        <a
-            class="link"
-            href="https://github.com/yone1130/browser-on-browser"
-            target="_blank"
-            >Browser on BrowserのGitHubリポジトリ</a
-        >
+    <a class="link" href="https://www.yoneyo.com">『よね/Yone』のホームページ</a>
 
-        <ul class="features">
-            <li class="features__li">
-                <p>
-                    できること: ページの表示、アドレスバーから指定URLへの移動、タブの作成・閉じる
-                </p>
-            </li>
+    <a class="link" href="https://github.com/yone1130/browser-on-browser" target="_blank">Browser on
+        BrowserのGitHubリポジトリ</a>
 
-            <li class="features__li">
-                <p>
-                    PC版を再現しているので、スマホでアクセスすると
-                    <div class="lol">CSS完全に理解した</div>
-                    状態になる可能性あり
-                </p>
-            </li>
+    <ul class="features">
+        <li class="features__li">
+            <p>
+                できること: ページの表示、アドレスバーから指定URLへの移動、タブの作成・閉じる、戻る・進む
+            </p>
+        </li>
 
-            <li class="features__li">
-                <p>iframeが許可されていないサイトは表示されないよ</p>
-            </li>
-        </ul>
-    </body>
+        <li class="features__li">
+            <p>
+                PC版を再現しているので、スマホでアクセスすると
+            <div class="lol">CSS完全に理解した</div>
+            状態になります。
+            </p>
+        </li>
+
+        <li class="features__li">
+            <p>iframeが許可されていないサイトは表示できません。</p>
+        </li>
+    </ul>
+</body>
+
 </html>
