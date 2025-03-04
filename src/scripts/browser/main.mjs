@@ -1,3 +1,4 @@
+
 export class Browser {
     name = "Browser";
 
