@@ -18,4 +18,4 @@ https://browser.yoneyo.com/ で公開しています。
 
 [MIT License](./LICENSE) のもとでライセンスされます。
 
-Copyright (C) よね/Yone
+Copyright &copy; よね/Yone

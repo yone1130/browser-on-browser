@@ -16,4 +16,4 @@ Deploy directory `src/`.
 
 Licensed under the [MIT License](./LICENSE).
 
-Copyright (C) よね/Yone
+Copyright &copy; よね/Yone
