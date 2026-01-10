@@ -10,23 +10,33 @@
 
 import { Browser } from "./browser/browser.js";
 
-/**
- * @type {Browser}
- */
-const browser = new Browser({
-    elements: {
-        addressInput: document.getElementById("addressBarInput"),
-        title: document.getElementById("tabTitle"),
-        newTabButton: document.getElementById("newTabButton"),
-        tabs: document.getElementById("tabsUl"),
-        view: document.getElementById("view"),
-        homeButton: document.getElementById("homeButton"),
-        backButton: document.getElementById("backButton"),
-        forwardButton: document.getElementById("forwardButton"),
-        bookmarkYoneHomepage: document.getElementById("bookmarkYoneHomepage"),
-        bookmarkYditsSite: document.getElementById("bookmarkYditsSite"),
-        bookmarkYditsWeb: document.getElementById("bookmarkYditsWeb"),
-    },
+run().catch(error => {
+    console.error("アプリケーションのイニシャライズに失敗しました", error);
+    alert(`アプリケーションのイニシャライズに失敗しました: ${error?.stack ?? error}`);
 });
 
-await browser.run();
+/**
+ * @returns {Promise<void>}
+ */
+async function run() {
+    /**
+     * @type {Browser}
+     */
+    const browser = new Browser({
+        elements: {
+            addressInput: document.getElementById("addressBarInput"),
+            title: document.getElementById("tabTitle"),
+            newTabButton: document.getElementById("newTabButton"),
+            tabs: document.getElementById("tabsUl"),
+            view: document.getElementById("view"),
+            homeButton: document.getElementById("homeButton"),
+            backButton: document.getElementById("backButton"),
+            forwardButton: document.getElementById("forwardButton"),
+            bookmarkYoneHomepage: document.getElementById("bookmarkYoneHomepage"),
+            bookmarkYditsSite: document.getElementById("bookmarkYditsSite"),
+            bookmarkYditsWeb: document.getElementById("bookmarkYditsWeb"),
+        },
+    });
+
+    await browser.run();
+}
