@@ -1,12 +1,10 @@
 # Browser on Browser
 
-[→ English](./README.md)
+[Read in English >](./README.md)
 
 ## 概要
 
-ブラウザを再現したウェブサイトです。
-
-『CSS完全に理解した』のでGoo〇le C〇romeを再現してみました(?)。ついでに機能もちょーっとだけ実装し、簡単なブラウジングもできるようにしました。
+ブラウザを再現したウェブアプリケーションです。
 
 https://browser.yoneyo.com/ で公開しています。
 
@@ -18,4 +16,4 @@ https://browser.yoneyo.com/ で公開しています。
 
 [MIT License](./LICENSE) のもとでライセンスされます。
 
-Copyright &copy; よね/Yone
+Copyright © よね/Yone

@@ -1,10 +1,10 @@
 # Browser on Browser
 
-[→ 日本語](./README_JP.md)
+[日本語で読む >](./README_JP.md)
 
 ## Overview
 
-The website that recreated a browser.
+A web application that recreated a browser.
 
 Published at https://browser.yoneyo.com/ .
 
@@ -16,4 +16,4 @@ Deploy directory `src/`.
 
 Licensed under the [MIT License](./LICENSE).
 
-Copyright &copy; よね/Yone
+Copyright © よね/Yone

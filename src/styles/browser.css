@@ -1,5 +1,20 @@
 @charset "utf-8";
 
+/*!
+
+    Browser on Browser
+
+    Copyright (C) 2024 よね/Yone
+
+    Licensed under the MIT License.
+
+*/
+
+@font-face {
+    font-family: "Local Noto Sans JP";
+    src: local("Noto Sans JP");
+}
+
 :root {
     --font-size: 16px;
     --navigation-height: 7rem;
@@ -19,7 +34,7 @@ body {
     height: 100dvh;
     overflow: hidden;
     font-size: var(--font-size);
-    font-family: "M PLUS 1", "Noto Sans JP", sans-serif;
+    font-family: "M PLUS 1", "Local Noto Sans JP", Arial, sans-serif;
     color: #f0f0f0ff;
     scrollbar-width: thin !important;
     scrollbar-color: #888 #f1f1f1 !important;
