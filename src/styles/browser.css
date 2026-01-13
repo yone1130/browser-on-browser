@@ -1,4 +1,4 @@
-@charset "utf-8";
+@charset "UTF-8";
 
 /*!
 
@@ -10,35 +10,49 @@
 
 */
 
-@font-face {
-    font-family: "Local Noto Sans JP";
-    src: local("Noto Sans JP");
-}
-
 :root {
     --font-size: 16px;
     --navigation-height: 7rem;
-}
-
-* {
-    margin: 0;
-    padding: 0;
-}
-
-html {
     font-size: var(--font-size);
 }
 
 body {
+    margin: 0;
     width: 100dvw;
     height: 100dvh;
+
     overflow: hidden;
-    font-size: var(--font-size);
-    font-family: "M PLUS 1", "Local Noto Sans JP", Arial, sans-serif;
-    color: #f0f0f0ff;
     scrollbar-width: thin !important;
     scrollbar-color: #888 #f1f1f1 !important;
+
+    font-size: var(--font-size);
+    font-family: "M PLUS 1", "Local Noto Sans JP", "Noto Sans JP", Arial, sans-serif;
+    color: #f0f0f0ff;
     user-select: none;
+    padding: 0;
+
+    & * {
+        margin: 0;
+        padding: 0;
+    }
+
+    &::-webkit-scrollbar {
+        width: 12px !important;
+    }
+
+    &::-webkit-scrollbar-track {
+        background: #f1f1f1;
+    }
+
+    &::-webkit-scrollbar-thumb {
+        background-color: #888;
+        border-radius: 10px;
+        border: 2px solid #f1f1f1;
+    }
+
+    &::-webkit-scrollbar-thumb:hover {
+        background: #555;
+    }
 }
 
 .navigation {
@@ -52,7 +66,7 @@ body {
     height: 33.3%;
     padding-left: 0.4rem;
     padding-right: 0.4rem;
-    gap: 1rem;
+    gap: 0.4rem;
 }
 
 .search-tabs-button {
@@ -62,10 +76,10 @@ body {
     box-shadow: 0 0 2px 2px #00000020;
     background-color: #404040ff;
     transition: background-color 0.3s;
-}
 
-.search-tabs-button:hover {
-    background-color: #204080ff;
+    &:hover {
+        background-color: #204080ff;
+    }
 }
 
 .tabs {
@@ -77,53 +91,62 @@ body {
     gap: 0.5rem;
 }
 
-::-webkit-scrollbar {
-    width: 12px !important;
-    /* スクロールバーの幅 */
-}
-
-::-webkit-scrollbar-track {
-    background: #f1f1f1;
-    /* トラックの背景色 */
-}
-
-::-webkit-scrollbar-thumb {
-    background-color: #888;
-    /* スクロールバーの色 */
-    border-radius: 10px;
-    /* 角を丸くする */
-    border: 2px solid #f1f1f1;
-    /* サムとトラックの間の隙間 */
-}
-
-::-webkit-scrollbar-thumb:hover {
-    background: #555;
-    /* ホバー時のサムの色 */
-}
-
 .tabs__ul {
     display: flex;
     align-items: flex-end;
     list-style: none;
-    gap: 0.5rem;
+    gap: 0.4rem;
     width: 100%;
     height: 100%;
     overflow: hidden;
 }
 
 .tabs__li {
+    position: relative;
     display: flex;
     justify-content: center;
     align-items: center;
     width: 100%;
     max-width: 12rem;
-    height: 90%;
+    height: calc(100% - 0.8rem);
+    padding-bottom: 0.4rem;
     overflow: hidden;
 }
 
 .tabs__li.current {
-    background-color: #404040ff;
+    background-color: hsl(0, 0%, 25%);
     border-radius: 0.5em 0.5em 0 0;
+    overflow: visible;
+
+    &::before {
+        position: absolute;
+        display: block;
+        bottom: 0;
+        left: -0.8rem;
+        width: 0.8rem;
+        height: 0.8rem;
+        background-color: #404040ff;
+        content: "";
+
+        background-color: transparent;
+        border-bottom-right-radius: 0.8rem;
+        box-shadow: 0.4rem 0.4rem 0 0.4rem hsl(0, 0%, 25%);
+    }
+
+    &::after {
+        position: absolute;
+        display: block;
+        bottom: 0;
+        right: -0.8rem;
+        width: 0.8rem;
+        height: 0.8rem;
+        background-color: #404040ff;
+        content: "";
+
+        background-color: transparent;
+        border-bottom-left-radius: 0.8rem;
+        box-shadow: -0.4rem 0.4rem 0 0.4rem hsl(0, 0%, 25%);
+    }
 }
 
 .tabs__hover {
@@ -131,15 +154,16 @@ body {
     justify-content: space-between;
     align-items: center;
     width: 100%;
-    height: 80%;
+    height: 100%;
     border-radius: 0.5em;
     padding-left: 0.5em;
     padding-right: 0.5em;
+    overflow: hidden;
     transition: background-color 0.3s;
-}
 
-.tabs__hover:hover:not(.tabs__li.current > .tabs__hover) {
-    background-color: #204080ff;
+    &:hover:not(.tabs__li.current > .tabs__hover) {
+        background-color: #204080ff;
+    }
 }
 
 .tabs__left {
@@ -167,15 +191,11 @@ body {
     height: 70%;
     aspect-ratio: 1 / 1;
     border-radius: 100vw;
-    background-color: #282828ff;
-}
+    background-color: #0000;
 
-.current .tabs__close {
-    background-color: unset;
-}
-
-.tabs__close:hover {
-    background-color: #707070ff;
+    &:hover {
+        background-color: #fff4;
+    }
 }
 
 .new-tab-button__wrapper {
@@ -194,10 +214,10 @@ body {
     aspect-ratio: 1 / 1;
     border-radius: 100vw;
     transition: background-color 0.3s;
-}
 
-.new-tab-button:hover {
-    background-color: #204080ff;
+    &:hover {
+        background-color: #204080ff;
+    }
 }
 
 .control {
@@ -210,11 +230,19 @@ body {
     padding-left: 0.5rem;
     padding-right: 0.5rem;
     background-color: #404040ff;
+
+    @media (width < 769px) {
+        gap: 0.4rem;
+    }
 }
 
 .action {
     display: flex;
     gap: 0.2rem;
+
+    @media (width < 769px) {
+        display: none;
+    }
 }
 
 .control__button {
@@ -226,10 +254,10 @@ body {
     border-radius: 100vw;
     padding: 0.3em;
     transition: background-color 0.3s;
-}
 
-.control__button:hover {
-    background-color: #707070ff;
+    &:hover {
+        background-color: #707070ff;
+    }
 }
 
 .control__button-img {
@@ -272,15 +300,15 @@ body {
     background-color: #00000000;
     font-size: 1rem;
     color: #ffffffff;
-}
 
-.address-bar-input:focus-visible {
-    outline: unset;
-    border: unset;
-}
+    &:focus-visible {
+        outline: unset;
+        border: unset;
+    }
 
-.address-bar-input::selection {
-    background-color: #6060a0ff;
+    &::selection {
+        background-color: #6060a0ff;
+    }
 }
 
 .menu {
@@ -299,10 +327,16 @@ body {
     border-radius: 100vw;
     padding: 0.3em;
     transition: background-color 0.3s;
+
+    &:hover {
+        background-color: #707070ff;
+    }
 }
 
-.menu-button:hover {
-    background-color: #707070ff;
+.user-button {
+    @media (width < 769px) {
+        display: none;
+    }
 }
 
 .menu-button__img {
@@ -342,14 +376,20 @@ body {
     gap: 0.5em;
     font-size: 0.8rem;
     transition: background-color 0.3s;
-}
 
-.bookmark-bar__li:hover {
-    background-color: #707070ff;
+    &:hover {
+        background-color: #707070ff;
+    }
 }
 
 .bookmark-bar__icon {
     height: 70%;
+}
+
+.bookmark-bar__title {
+    @media (width < 769px) {
+        display: none;
+    }
 }
 
 .all-bookmarks {
@@ -360,10 +400,10 @@ body {
     border-radius: 100vw;
     padding: 0 0.5em;
     transition: background-color 0.3s;
-}
 
-.all-bookmarks:hover {
-    background-color: #707070ff;
+    &:hover {
+        background-color: #707070ff;
+    }
 }
 
 .view {

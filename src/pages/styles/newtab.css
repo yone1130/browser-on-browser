@@ -13,28 +13,27 @@
 :root {
     --font-size: 16px;
     --navigation-height: 7rem;
-}
-
-* {
-    margin: 0;
-    padding: 0;
-}
-
-html {
     font-size: var(--font-size);
 }
 
 body {
-    --this-padding: 0.5rem;
     display: flex;
+    margin: 0;
+
+    padding: 2rem 0.5rem;
     align-items: center;
     flex-direction: column;
-    padding: 2rem var(--this-padding);
     gap: 1.5rem;
-    font-size: var(--font-size);
-    font-family: "M PLUS 1", "Noto Sans JP", sans-serif;
-    color: #f0f0f0ff;
+
     background-color: #202020ff;
+    font-size: var(--font-size);
+    font-family: "M PLUS 1", "Local Noto Sans JP", "Noto Sans JP", Arial, sans-serif;
+    color: #f0f0f0ff;
+
+    & * {
+        margin: 0;
+        padding: 0;
+    }
 }
 
 .page-title {

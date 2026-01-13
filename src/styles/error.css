@@ -13,27 +13,28 @@
 :root {
     --font-size: 16px;
     --navigation-height: 7rem;
-}
-
-* {
-    margin: 0;
-    padding: 0;
-}
-
-html {
     font-size: var(--font-size);
 }
 
 body {
+    margin: 0;
     width: 100dvw;
     height: 100dvh;
+
     overflow: hidden;
-    background-color: #202020ff;
-    font-size: var(--font-size);
-    font-family: "M PLUS 1", "Noto Sans JP", sans-serif;
-    color: #f0f0f0ff;
     scrollbar-width: thin !important;
     scrollbar-color: #888 #f1f1f1 !important;
+
+    background-color: #202020ff;
+    font-size: var(--font-size);
+    font-family: "M PLUS 1", "Local Noto Sans JP", "Noto Sans JP", Arial, sans-serif;
+    color: #f0f0f0ff;
+    padding: 0;
+
+    & * {
+        margin: 0;
+        padding: 0;
+    }
 }
 
 .error__body {
@@ -63,8 +64,8 @@ body {
 .error__link {
     color: #80f080ff;
     text-decoration: none;
-}
 
-.error__link:hover {
-    text-decoration: underline;
+    &:hover {
+        text-decoration: underline;
+    }
 }
