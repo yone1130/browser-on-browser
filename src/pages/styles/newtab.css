@@ -5,15 +5,20 @@
     Browser on Browser
 
     Copyright (C) 2024 よね/Yone
-
     Licensed under the MIT License.
+
+    https://github.com/yone1130/browser-on-browser
 
 */
 
 :root {
+    --font-family: "M PLUS 1", "Local Noto Sans JP", "Noto Sans JP", Arial, sans-serif;
     --font-size: 16px;
+    --font-weight: 400;
     --navigation-height: 7rem;
+
     font-size: var(--font-size);
+    font-weight: var(--font-weight);
 }
 
 body {
@@ -26,13 +31,15 @@ body {
     gap: 1.5rem;
 
     background-color: #202020ff;
+    font-family: var(--font-family);
     font-size: var(--font-size);
-    font-family: "M PLUS 1", "Local Noto Sans JP", "Noto Sans JP", Arial, sans-serif;
+    font-weight: var(--font-weight);
     color: #f0f0f0ff;
 
     & * {
         margin: 0;
         padding: 0;
+        box-sizing: border-box;
     }
 }
 

@@ -1,11 +1,12 @@
 /**!
- * 
+ *
  * Browser on Browser
- * 
+ *
  * Copyright (C) 2024 よね/Yone
- * 
  * Licensed under the MIT License.
  * 
+ * https://github.com/yone1130/browser-on-browser
+ *
  */
 
 import { Browser } from "./browser/browser.js";
