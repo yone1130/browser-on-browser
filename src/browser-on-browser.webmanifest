@@ -1,0 +1,13 @@
+{
+    "manifest_version": "3",
+    "name": "Browser on Browser",
+    "short_name": "Browser on Browser",
+    "description": "ブラウザを再現したウェブアプリケーションです。",
+    "scope": "/",
+    "start_url": "/",
+    "theme_color": "#204080",
+    "background_color": "#404040",
+    "display": "standalone",
+    "icons": [],
+    "permissions": []
+}
