@@ -400,13 +400,15 @@ export class Browser {
 
         if (uri.startsWith("view://")) {
             url = `./pages/${uri.replace(/^view:\/\//, "")}.html`;
-        } else if (uri.startsWith("javascript:")) {
-            this.#onInvalidUrlEntered(undefined, uri);
-            return;
         } else {
             try {
                 url = new URL(uri);
                 uri = new URL(uri);
+
+                if (uri.protocol === "javascript:") {
+                    this.#onInvalidUrlEntered(undefined, uri);
+                    return;
+                }
             } catch (error) {
                 try {
                     url = new URL("https://" + uri);
