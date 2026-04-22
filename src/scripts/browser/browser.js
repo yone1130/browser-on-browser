@@ -401,7 +401,7 @@ export class Browser {
         if (uri.startsWith("view://")) {
             url = `./pages/${uri.replace(/^view:\/\//, "")}.html`;
         } else if (uri.startsWith("javascript:")) {
-            this.#onInvalidUrlEntered(error, uri);
+            this.#onInvalidUrlEntered(undefined, uri);
             return;
         } else {
             try {
